@@ -1,0 +1,28 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorControlActivated">#FFF</item>
+    </style>
+    <style name="LoginInputTextLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">#FFF</item>
+        <item name="boxStrokeWidth">2dp</item>
+        <item name="colorControlActivated">#FFF</item>
+    </style>
+    <style name="LoginInputTextLayout2" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">#86B2E3</item>
+        <item name="boxStrokeWidth">2dp</item>
+        <item name="colorControlActivated">#86B2E3</item>
+    </style>
+    <style name="SecondTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorControlActivated">#FFF</item>
+    </style>
+
+</resources>
