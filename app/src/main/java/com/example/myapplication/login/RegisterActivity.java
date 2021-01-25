@@ -42,7 +42,7 @@ public class RegisterActivity extends AppCompatActivity {
     int success;
     ConnectivityManager conMngr;
 
-    private String url = "http://192.168.1.8/android/register.php";
+    private String url = "http://192.168.1.11/android/register.php";
 
     private static final String TAG = RegisterActivity.class.getSimpleName();
 
@@ -67,22 +67,22 @@ public class RegisterActivity extends AppCompatActivity {
             }
         }
 
-        tvLogin = (AppCompatTextView) findViewById(R.id.tvLogin);
+//        tvLogin = (AppCompatTextView) findViewById(R.id.tvLogin);
         btnRegister = (AppCompatButton) findViewById(R.id.btnRegister);
         editTextUsername = (TextInputEditText) findViewById(R.id.editTextNameReg);
         editTextPassword = (TextInputEditText) findViewById(R.id.editTextPasswordReg);
         editTextCPassword = (TextInputEditText) findViewById(R.id.editTextConfirmPasswordReg);
 
-        tvLogin.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                // TODO Auto-generated method stub
-                intent = new Intent(RegisterActivity.this, LoginActivity.class);
-                finish();
-                startActivity(intent);
-            }
-        });
+//        tvLogin.setOnClickListener(new View.OnClickListener() {
+//
+//            @Override
+//            public void onClick(View v) {
+//                // TODO Auto-generated method stub
+//                intent = new Intent(RegisterActivity.this, LoginActivity.class);
+//                finish();
+//                startActivity(intent);
+//            }
+//        });
 
         btnRegister.setOnClickListener(new View.OnClickListener() {
 

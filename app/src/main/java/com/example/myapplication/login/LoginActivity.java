@@ -45,7 +45,7 @@ public class LoginActivity extends AppCompatActivity {
     int success;
     ConnectivityManager conMngr;
 
-    private String url = "http://192.168.1.8/android/login.php";
+    private String url = "http://192.168.1.11/android/login.php";
     private static final String TAG_SUKSES = "success";
     private static final String TAG_PESAN = "message";
     private static final String TAG_USERNAME = "username";
@@ -100,7 +100,6 @@ public class LoginActivity extends AppCompatActivity {
                 String username = etUsername.getText().toString();
                 String password = etPassword.getText().toString();
 
-                // mengecek kolom yang kosong
                 if (username.trim().length() > 0 && password.trim().length() > 0) {
                     if (conMngr.getActiveNetworkInfo() != null
                             && conMngr.getActiveNetworkInfo().isAvailable()

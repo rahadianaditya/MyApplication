@@ -22,7 +22,7 @@ import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.example.myapplication.R;
-import com.example.myapplication.adapter.Adapter;
+import com.example.myapplication.adapter.AdapterPenyakit;
 import com.example.myapplication.controller.Controller;
 import com.example.myapplication.model.Data;
 
@@ -37,19 +37,20 @@ import java.util.Map;
 public class PenyakitActivity extends AppCompatActivity implements SwipeRefreshLayout.OnRefreshListener, SearchView.OnQueryTextListener {
 
     ProgressDialog dialog;
-    public static ArrayList<Data> dataList = new ArrayList<>();
-    Adapter adapter;
+    public static ArrayList<Data> list = new ArrayList<>();
+    AdapterPenyakit adapter;
     SwipeRefreshLayout swipe;
     ListView listView;
 
-    public static final String url_view = "http://192.168.5.149/android/viewPenyakit.php";
-    public static final String url_search = "http://192.168.5.149/android/searchPenyakit.php";
+    public static final String url_view = "http://192.168.1.11/android/viewPenyakit.php";
+    public static final String url_search = "http://192.168.1.11/android/searchPenyakit.php";
 
-    private static final String TAG = KamusActivity.class.getSimpleName();
+    private static final String TAG = PenyakitActivity.class.getSimpleName();
 
     public static final String TAG_ID = "id";
     public static final String TAG_ID_PENYAKIT = "id_penyakit";
     public static final String TAG_PENYAKIT = "penyakit";
+    public static final String TAG_DESC = "deskripsi";
     public static final String TAG_HASIL = "results";
     public static final String TAG_PESAN = "message";
     public static final String TAG_VALUE = "value";
@@ -61,15 +62,15 @@ public class PenyakitActivity extends AppCompatActivity implements SwipeRefreshL
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_penyakit);
 
-        swipe = (SwipeRefreshLayout) findViewById(R.id.swipe_refresh);
-        listView = (ListView) findViewById(R.id.list_view);
-        adapter = new Adapter(PenyakitActivity.this, dataList);
+        swipe = findViewById(R.id.swipe_refresh);
+        listView = findViewById(R.id.list_view1);
+        adapter = new AdapterPenyakit(PenyakitActivity.this, list);
         listView.setAdapter(adapter);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                startActivity(new Intent(getApplicationContext(), DetailKamus.class).putExtra("position", i));
+                startActivity(new Intent(getApplicationContext(), DetailPenyakit.class).putExtra("position", i));
             }
         });
 
@@ -83,11 +84,10 @@ public class PenyakitActivity extends AppCompatActivity implements SwipeRefreshL
                        }
                    }
         );
-
     }
 
     private void getData() {
-        dataList.clear();
+        list.clear();
         adapter.notifyDataSetChanged();
         swipe.setRefreshing(true);
 
@@ -106,9 +106,10 @@ public class PenyakitActivity extends AppCompatActivity implements SwipeRefreshL
                         Data item = new Data();
 
                         item.setId(obj.getString(TAG_ID_PENYAKIT));
-                        item.setKata(obj.getString(TAG_PENYAKIT));
+                        item.setPenyakit(obj.getString(TAG_PENYAKIT));
+                        item.setDeskripsi(obj.getString(TAG_DESC));
 
-                        dataList.add(item);
+                        list.add(item);
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
@@ -177,7 +178,7 @@ public class PenyakitActivity extends AppCompatActivity implements SwipeRefreshL
                     int value = jObj.getInt(TAG_VALUE);
 
                     if (value == 1) {
-                        dataList.clear();
+                        list.clear();
                         adapter.notifyDataSetChanged();
 
                         String getObject = jObj.getString(TAG_HASIL);
@@ -189,9 +190,10 @@ public class PenyakitActivity extends AppCompatActivity implements SwipeRefreshL
                             Data data = new Data();
 
                             data.setId(obj.getString(TAG_ID_PENYAKIT));
-                            data.setKata(obj.getString(TAG_PENYAKIT));
+                            data.setPenyakit(obj.getString(TAG_PENYAKIT));
+                            data.setDeskripsi(obj.getString(TAG_DESC));
 
-                            dataList.add(data);
+                            list.add(data);
                         }
 
                     } else {

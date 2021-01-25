@@ -7,7 +7,6 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.myapplication.R;
-import com.example.myapplication.user.KamusActivity;
 
 public class DetailKamus extends AppCompatActivity {
     TextView tvKata;
@@ -16,7 +15,7 @@ public class DetailKamus extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.detail_data);
+        setContentView(R.layout.detail_kamus);
 
         tvKata = findViewById(R.id.detailKata);
         tvArti = findViewById(R.id.detailArti);

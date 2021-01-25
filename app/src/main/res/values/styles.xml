@@ -6,14 +6,9 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <item name="colorControlActivated">#FFF</item>
+        <item name="colorControlActivated">#86B2E3</item>
     </style>
     <style name="LoginInputTextLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-        <item name="boxStrokeColor">#FFF</item>
-        <item name="boxStrokeWidth">2dp</item>
-        <item name="colorControlActivated">#FFF</item>
-    </style>
-    <style name="LoginInputTextLayout2" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
         <item name="boxStrokeColor">#86B2E3</item>
         <item name="boxStrokeWidth">2dp</item>
         <item name="colorControlActivated">#86B2E3</item>

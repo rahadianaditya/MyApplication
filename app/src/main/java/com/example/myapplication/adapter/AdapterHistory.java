@@ -13,13 +13,13 @@ import com.example.myapplication.model.Data;
 
 import java.util.List;
 
-public class Adapter extends BaseAdapter {
+public class AdapterHistory extends BaseAdapter {
 
     private Activity activity;
     private LayoutInflater inflater;
     private List<Data> item;
 
-    public Adapter(Activity activity, List<Data> item) {
+    public AdapterHistory(Activity activity, List<Data> item) {
         this.activity = activity;
         this.item = item;
     }
@@ -42,15 +42,21 @@ public class Adapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
-        if (inflater == null)
+        if (inflater == null){
             inflater = (LayoutInflater) activity
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        }
 
-        if (convertView == null)
-            convertView = inflater.inflate(R.layout.list_item, null);
-            TextView txtKata = (TextView) convertView.findViewById(R.id.txtKata);
-            txtKata.setText(item.get(position).getKata());
+        if (convertView == null){
+            inflater = LayoutInflater.from(parent.getContext());
+            convertView = inflater.inflate(R.layout.list_history, null);
+            TextView txtHistory = (TextView) convertView.findViewById(R.id.txtHistory);
+            TextView txtDate = (TextView) convertView.findViewById(R.id.date);
+            txtHistory.setText(item.get(position).getHasil());
+            txtDate.setText(item.get(position).getTanggal());
 
+        }
         return convertView;
     }
+
 }

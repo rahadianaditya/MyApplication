@@ -22,8 +22,8 @@ import com.android.volley.VolleyError;
 import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.StringRequest;
-import com.example.myapplication.adapter.Adapter;
 import com.example.myapplication.R;
+import com.example.myapplication.adapter.AdapterKamus;
 import com.example.myapplication.controller.Controller;
 import com.example.myapplication.model.Data;
 
@@ -39,12 +39,12 @@ public class KamusActivity extends AppCompatActivity implements SwipeRefreshLayo
 
     ProgressDialog dialog;
     public static ArrayList<Data> dataList = new ArrayList<>();
-    Adapter adapter;
+    AdapterKamus adapter;
     SwipeRefreshLayout swipe;
     ListView listView;
 
-    public static final String url_view = "http://192.168.5.149/android/viewKamus.php";
-    public static final String url_search = "http://192.168.5.149/android/searchKamus.php";
+    public static final String url_view = "http://192.168.1.11/android/viewKamus.php";
+    public static final String url_search = "http://192.168.1.11/android/searchKamus.php";
 
     private static final String TAG = KamusActivity.class.getSimpleName();
 
@@ -65,7 +65,7 @@ public class KamusActivity extends AppCompatActivity implements SwipeRefreshLayo
 
         swipe = (SwipeRefreshLayout) findViewById(R.id.swipe_refresh);
         listView = (ListView) findViewById(R.id.list_view);
-        adapter = new Adapter(KamusActivity.this, dataList);
+        adapter = new AdapterKamus(KamusActivity.this, dataList);
         listView.setAdapter(adapter);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -85,7 +85,6 @@ public class KamusActivity extends AppCompatActivity implements SwipeRefreshLayo
                        }
                    }
         );
-
     }
 
     private void getData() {

@@ -1,3 +1,17 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">HealthyCat</string>
+    <string name="desc_diag">Menu ini digunakan untuk melakukan \nproses diagnosa.</string>
+    <string name="desc_kamus">Menu ini digunakan untuk melihat kamus \nistilah yang berkaitan dengan kucing</string>
+    <string name="desc_penyakit">Menu ini digunakan untuk melihat \npenyakit apa saja yang bisa dideteksi \noleh sistem</string>
+    <string name="desc_help">Menu ini digunakan untuk \nmelihat halaman bantuan</string>
+    <string name="desc_about">Menu ini digunakan untuk \nmelihat halaman tentang aplikasi</string>
+    <string name="desc_hist">Menu ini digunakan untuk melihat riwayat diagnosa.</string>
+    <string name="diag_name">Diagnosa</string>
+    <string name="dict_name">Kamus</string>
+    <string name="peny_name">Data Penyakit</string>
+    <string name="hist_name">Riwayat</string>
+    <string name="help_name">Bantuan</string>
+    <string name="abt_name">Tentang</string>
+    <string name="a">1. Anda harus menjawab pertanyaan yang ditampilkan oleh sistem. Jawab sesuai dengan kondisi gejala kucing Anda.</string>
+    <string name="b">2. Sistem akan secara otomatis menampilkan hasil diagnosa jika jawaban yang Anda berikan telah sesuai dengan aturan sistem.</string>
 </resources>
